@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\ComplexClass.cpp" />
     <ClCompile Include="..\..\ComplexClassTesting.cpp" />
   </ItemGroup>
   <ItemGroup>
