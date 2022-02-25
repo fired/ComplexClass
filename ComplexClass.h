@@ -6,7 +6,7 @@ using namespace std;
 
 class ComplexNumber {
 public:
-	// Constructor
+	// Constructors
 	ComplexNumber();
 	ComplexNumber(int r, int i);
 
@@ -27,5 +27,16 @@ private:
 
 };
 
+
+ostream& operator <<(ostream& out, const ComplexNumber cn);
+
+// Math Operator
+ComplexNumber operator *(int n, const ComplexNumber& right);
+ComplexNumber operator*(const ComplexNumber& left, const ComplexNumber& right);
+ComplexNumber operator+ (const ComplexNumber& left, const ComplexNumber& right);
+ComplexNumber operator- (const ComplexNumber& left, const ComplexNumber& right);
+
+//Free Functions
+bool operator < (const ComplexNumber& left, const ComplexNumber& right);
 
 #endif

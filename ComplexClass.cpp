@@ -24,11 +24,11 @@ ComplexNumber::ComplexNumber(int r, int i)
 // 
 //**************************************
 int ComplexNumber::get_Re() const {
-	// fill in
+	return Real;
 }
 
 int ComplexNumber::get_Im() const {
-	// fill in
+	return Imaginary;
 }
 
 int ComplexNumber::get_Location() const {
@@ -53,3 +53,27 @@ ComplexNumber& ComplexNumber::operator=(const ComplexNumber& right)
 	// insert return statement here
 }
 
+ComplexNumber operator*(int n, const ComplexNumber& right)
+{
+	return;
+}
+
+ComplexNumber operator*(const ComplexNumber& left, const ComplexNumber& right)
+{
+	return;
+}
+
+ComplexNumber operator+(const ComplexNumber& left, const ComplexNumber& right)
+{
+	return;
+}
+
+ComplexNumber operator-(const ComplexNumber& left, const ComplexNumber& right)
+{
+	return;
+}
+
+bool operator<(const ComplexNumber& left, const ComplexNumber& right)
+{
+	return false;
+}
