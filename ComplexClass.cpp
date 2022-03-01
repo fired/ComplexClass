@@ -53,6 +53,11 @@ ComplexNumber& ComplexNumber::operator=(const ComplexNumber& right)
 	// insert return statement here
 }
 
+ostream& operator<<(ostream& out, const ComplexNumber cn)
+{
+	// insert return statement here
+}
+
 ComplexNumber operator*(int n, const ComplexNumber& right)
 {
 	return;
