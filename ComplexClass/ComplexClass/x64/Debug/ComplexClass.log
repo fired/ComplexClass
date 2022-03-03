@@ -1,2 +1,6 @@
-﻿  ComplexClassTesting.cpp
+﻿  ComplexClass.cpp
+  ComplexClassTesting.cpp
+  Generating Code...
+C:\Users\respe\Desktop\GitHub\ComplexClass\ComplexClass.cpp(51): warning C4715: 'ComplexNumber::get_Location': not all control paths return a value
+C:\Users\respe\Desktop\GitHub\ComplexClass\ComplexClass.cpp(97): warning C4715: 'operator<<': not all control paths return a value
   ComplexClass.vcxproj -> C:\Users\respe\Desktop\GitHub\ComplexClass\ComplexClass\x64\Debug\ComplexClass.exe

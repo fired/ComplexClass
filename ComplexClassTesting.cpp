@@ -34,6 +34,24 @@ int main() {
 	cout << "Magnitude: " << test5.get_Magnitude() << endl;
 	cout << endl;
 
+	// <
+	if (test < test2) {
+		cout << "test is less than test2" << endl;
+		cout << endl;
+	}
+	else {
+		cout << "test is not less than test2" << endl;
+		cout << endl;
+	}
+	if (test3 < test4) {
+		cout << "test3 is less than test4" << endl;
+		cout << endl;
+	}
+	else {
+		cout << "test3 is not less than test4" << endl;
+		cout << endl;
+	}
+
 	//Conjugate
 	test.Conjugate();
 	test2.Conjugate();
@@ -56,5 +74,6 @@ int main() {
 	test3 = test4;
 	cout << "test = test2 operator: " << test << endl;
 	cout << "test3 = test4 operator: " << test3 << endl;
+	cout << endl;
 	
 }

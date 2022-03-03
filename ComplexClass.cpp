@@ -96,12 +96,12 @@ ostream& operator<<(ostream& out, const ComplexNumber cn)
 	}
 }
 
-//ComplexNumber operator*(int n, const ComplexNumber& right) // 3 ? (2 + 3i) = (3 ? 2) + (3 ? 3)i
+//ComplexNumber operator*(int n, const ComplexNumber& right) // 3 * (2 + 3i) = (3 * 2) + (3 * 3)i
 //{
 //	
 //}
 //
-//ComplexNumber operator*(const ComplexNumber& left, const ComplexNumber& right) // (3 + 4i) ? (2 + 5i) = (3 ? 2 ? 4 ? 5) + (3 ? 5 + 4 ? 2)i
+//ComplexNumber operator*(const ComplexNumber& left, const ComplexNumber& right) // (3 + 4i) * (2 + 5i) = (3 * 2 - 4 * 5) + (3 * 5 + 4 * 2)i
 //{
 //	return;
 //}
@@ -115,8 +115,8 @@ ostream& operator<<(ostream& out, const ComplexNumber cn)
 //{
 //	return;
 //}
-//
-//bool operator<(const ComplexNumber& left, const ComplexNumber& right)
-//{
-//	return false;
-//}
+
+bool operator<(const ComplexNumber& left, const ComplexNumber& right)
+{
+	return (left.get_Magnitude() < right.get_Magnitude());
+}
