@@ -14,13 +14,13 @@ public:
 	int get_Re() const;
 	int get_Im() const;
 	int get_Location() const; // Get quadrant
-	double get_magnitude() const;
+	double get_Magnitude() const;
 
-	// Mutators
+	//// Mutators
 	void Conjugate(); // When z = x + yi the conjugate, denoted z, is dfined to be z = x - yi
 
-	// Operator 
-	ComplexNumber& operator = (const ComplexNumber& right);
+	//// Operator 
+	//ComplexNumber& operator = (const ComplexNumber& right);
 
 private:
 	int Real, Imaginary; 
@@ -30,13 +30,13 @@ private:
 
 ostream& operator <<(ostream& out, const ComplexNumber cn);
 
-// Math Operator
-ComplexNumber operator *(int n, const ComplexNumber& right);
-ComplexNumber operator*(const ComplexNumber& left, const ComplexNumber& right);
-ComplexNumber operator+ (const ComplexNumber& left, const ComplexNumber& right);
-ComplexNumber operator- (const ComplexNumber& left, const ComplexNumber& right);
-
-//Free Functions
-bool operator < (const ComplexNumber& left, const ComplexNumber& right);
+//// Math Operator
+//ComplexNumber operator *(int n, const ComplexNumber& right);
+//ComplexNumber operator*(const ComplexNumber& left, const ComplexNumber& right);
+//ComplexNumber operator+ (const ComplexNumber& left, const ComplexNumber& right);
+//ComplexNumber operator- (const ComplexNumber& left, const ComplexNumber& right);
+//
+////Free Functions
+//bool operator < (const ComplexNumber& left, const ComplexNumber& right);
 
 #endif

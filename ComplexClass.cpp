@@ -8,14 +8,15 @@ using namespace std;
 
 
 //----- Definition of default constructor
-ComplexNumber::ComplexNumber() {
-	Real = 0;
-	Imaginary = 0;
+ComplexNumber::ComplexNumber() : Real(0), Imaginary(0)
+{
 }
 
 ComplexNumber::ComplexNumber(int r, int i)
 {
-	// fill in
+	// HANDLE BAD INPUT
+	Real = r;
+	Imaginary = i;
 }
 
 // *************************************
@@ -32,11 +33,28 @@ int ComplexNumber::get_Im() const {
 }
 
 int ComplexNumber::get_Location() const {
-	// fill in
+	if (Real == 0 && Imaginary == 0) {
+		return 0;
+	}
+	if (Real > 0 && Imaginary > 0) {
+		return 1;
+	}
+	if (Real < 0 && Imaginary > 0) {
+		return 2;
+	}
+	if (Real < 0 && Imaginary < 0) {
+		return 3;
+	}
+	if (Real > 0 && Imaginary < 0) {
+		return 4;
+	}
 }
 
-double ComplexNumber::get_magnitude() const {
-	// fill in
+double ComplexNumber::get_Magnitude() const {
+	double magnitude;
+
+	magnitude = sqrt((Real * Real) + (Imaginary * Imaginary));
+	return magnitude;
 }
 
 // *************************************
@@ -45,40 +63,56 @@ double ComplexNumber::get_magnitude() const {
 // 
 //**************************************
 void ComplexNumber::Conjugate() {
-	// fill in
+	Imaginary = Imaginary * -1;
 }
 
-ComplexNumber& ComplexNumber::operator=(const ComplexNumber& right)
-{
-	// insert return statement here
-}
+//// *************************************
+//// 
+//// Operator
+//// 
+////**************************************
+//ComplexNumber& ComplexNumber::operator=(const ComplexNumber& right)
+//{
+//	// insert return statement here
+//}
 
 ostream& operator<<(ostream& out, const ComplexNumber cn)
 {
-	// insert return statement here
-}
+	if (cn.get_Im() >= 0) {
+		out << cn.get_Re() << " + " << cn.get_Im() << "i";
+		return out;
+	}
 
-ComplexNumber operator*(int n, const ComplexNumber& right)
-{
-	return;
-}
+	if (cn.get_Im() < 0) {
+		int makep; // makes negative positive
+		makep = cn.get_Im() * -1;
 
-ComplexNumber operator*(const ComplexNumber& left, const ComplexNumber& right)
-{
-	return;
+		out << cn.get_Re() << " - " << makep << "i";
+		return out;
+	}
 }
-
-ComplexNumber operator+(const ComplexNumber& left, const ComplexNumber& right)
-{
-	return;
-}
-
-ComplexNumber operator-(const ComplexNumber& left, const ComplexNumber& right)
-{
-	return;
-}
-
-bool operator<(const ComplexNumber& left, const ComplexNumber& right)
-{
-	return false;
-}
+//
+//ComplexNumber operator*(int n, const ComplexNumber& right)
+//{
+//	return;
+//}
+//
+//ComplexNumber operator*(const ComplexNumber& left, const ComplexNumber& right)
+//{
+//	return;
+//}
+//
+//ComplexNumber operator+(const ComplexNumber& left, const ComplexNumber& right)
+//{
+//	return;
+//}
+//
+//ComplexNumber operator-(const ComplexNumber& left, const ComplexNumber& right)
+//{
+//	return;
+//}
+//
+//bool operator<(const ComplexNumber& left, const ComplexNumber& right)
+//{
+//	return false;
+//}
