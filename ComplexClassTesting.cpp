@@ -47,6 +47,14 @@ int main() {
 	cout << "Conjugate: " << test5 << endl;
 	cout << endl;
 
-
+	// = operator
+	cout << "test: " << test << endl;
+	cout << "test2: " << test2 << endl;
+	cout << "test3: " << test3 << endl;
+	cout << "test4: " << test4 << endl;
+	test = test2;
+	test3 = test4;
+	cout << "test = test2 operator: " << test << endl;
+	cout << "test3 = test4 operator: " << test3 << endl;
 	
 }

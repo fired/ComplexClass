@@ -1,8 +1,8 @@
 #include <iostream>
 using namespace std;
 
-#ifndef COMPLEXCLASS
-#define COMPLEXCLASS
+#ifndef COMPLEXCLASS_H
+#define COMPLEXCLASS_H
 
 class ComplexNumber {
 public:
@@ -16,11 +16,11 @@ public:
 	int get_Location() const; // Get quadrant
 	double get_Magnitude() const;
 
-	//// Mutators
+	// Mutators
 	void Conjugate(); // When z = x + yi the conjugate, denoted z, is dfined to be z = x - yi
 
-	//// Operator 
-	//ComplexNumber& operator = (const ComplexNumber& right);
+	// Operator 
+	ComplexNumber& operator = (const ComplexNumber& right);
 
 private:
 	int Real, Imaginary; 

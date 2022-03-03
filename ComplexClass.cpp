@@ -71,10 +71,14 @@ void ComplexNumber::Conjugate() {
 //// Operator
 //// 
 ////**************************************
-//ComplexNumber& ComplexNumber::operator=(const ComplexNumber& right)
-//{
-//	// insert return statement here
-//}
+ComplexNumber& ComplexNumber::operator=(const ComplexNumber& right)
+{
+	if (Real != right.Real && Imaginary != right.Imaginary) {
+		Real = right.Real;
+		Imaginary = right.Imaginary;
+	}
+	return *this;
+}
 
 ostream& operator<<(ostream& out, const ComplexNumber cn)
 {
@@ -91,23 +95,23 @@ ostream& operator<<(ostream& out, const ComplexNumber cn)
 		return out;
 	}
 }
+
+//ComplexNumber operator*(int n, const ComplexNumber& right) // 3 ? (2 + 3i) = (3 ? 2) + (3 ? 3)i
+//{
+//	
+//}
 //
-//ComplexNumber operator*(int n, const ComplexNumber& right)
+//ComplexNumber operator*(const ComplexNumber& left, const ComplexNumber& right) // (3 + 4i) ? (2 + 5i) = (3 ? 2 ? 4 ? 5) + (3 ? 5 + 4 ? 2)i
 //{
 //	return;
 //}
 //
-//ComplexNumber operator*(const ComplexNumber& left, const ComplexNumber& right)
+//ComplexNumber operator+(const ComplexNumber& left, const ComplexNumber& right) // (3 + 4i) + (2 + 5i) = (3 + 2) + (4 + 5)i
 //{
 //	return;
 //}
 //
-//ComplexNumber operator+(const ComplexNumber& left, const ComplexNumber& right)
-//{
-//	return;
-//}
-//
-//ComplexNumber operator-(const ComplexNumber& left, const ComplexNumber& right)
+//ComplexNumber operator-(const ComplexNumber& left, const ComplexNumber& right) // (3 + 4i) ? (2 + 5i) = (3 + 2) ? (4 + 5)i
 //{
 //	return;
 //}
