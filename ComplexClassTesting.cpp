@@ -137,5 +137,5 @@ int main() {
 	cout << "Complex c4 - Complex c5: " << c4 - c5 << endl;
 	cout << endl;
 
-	return;
+	return 0;
 }

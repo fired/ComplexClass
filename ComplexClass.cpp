@@ -14,7 +14,6 @@ ComplexNumber::ComplexNumber() : Real(0), Imaginary(0)
 
 ComplexNumber::ComplexNumber(int r, int i)
 {
-	// HANDLE BAD INPUT
 	Real = r;
 	Imaginary = i;
 }
@@ -66,11 +65,11 @@ void ComplexNumber::Conjugate() {
 	Imaginary = Imaginary * -1;
 }
 
-//// *************************************
-//// 
-//// Operator
-//// 
-////**************************************
+// *************************************
+// 
+// Operator
+// 
+//**************************************
 ComplexNumber& ComplexNumber::operator=(const ComplexNumber& right)
 {
 	if (Real != right.Real && Imaginary != right.Imaginary) {
@@ -84,7 +83,6 @@ ostream& operator<<(ostream& out, const ComplexNumber cn)
 {
 	if (cn.get_Im() >= 0) {
 		out << cn.get_Re() << " + " << cn.get_Im() << "i";
-		return out;
 	}
 
 	if (cn.get_Im() < 0) {
@@ -92,8 +90,8 @@ ostream& operator<<(ostream& out, const ComplexNumber cn)
 		makep = cn.get_Im() * -1;
 
 		out << cn.get_Re() << " - " << makep << "i";
-		return out;
 	}
+	return out;
 }
 
 ComplexNumber operator*(int n, const ComplexNumber& right) // 3 * (2 + 3i) = (3 * 2) + (3 * 3)i
@@ -133,12 +131,12 @@ ComplexNumber operator+(const ComplexNumber& left, const ComplexNumber& right) /
 	return temp;
 }
 
-ComplexNumber operator-(const ComplexNumber& left, const ComplexNumber& right) // (3 + 4i) ? (2 + 5i) = (3 + 2) ? (4 + 5)i
+ComplexNumber operator-(const ComplexNumber& left, const ComplexNumber& right) // (3 + 4i) ? (2 + 5i) = (3 + 2) - (4 + 5)i
 {
 	int r, i;
 
 	r = left.get_Re() + right.get_Re();
-	i = left.get_Im() + right.get_Im();
+	i = -1 * (left.get_Im() + right.get_Im());
 
 	ComplexNumber temp(r, i);
 	return temp;
