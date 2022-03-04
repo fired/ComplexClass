@@ -96,25 +96,53 @@ ostream& operator<<(ostream& out, const ComplexNumber cn)
 	}
 }
 
-//ComplexNumber operator*(int n, const ComplexNumber& right) // 3 * (2 + 3i) = (3 * 2) + (3 * 3)i
-//{
-//	
-//}
-//
-//ComplexNumber operator*(const ComplexNumber& left, const ComplexNumber& right) // (3 + 4i) * (2 + 5i) = (3 * 2 - 4 * 5) + (3 * 5 + 4 * 2)i
-//{
-//	return;
-//}
-//
-//ComplexNumber operator+(const ComplexNumber& left, const ComplexNumber& right) // (3 + 4i) + (2 + 5i) = (3 + 2) + (4 + 5)i
-//{
-//	return;
-//}
-//
-//ComplexNumber operator-(const ComplexNumber& left, const ComplexNumber& right) // (3 + 4i) ? (2 + 5i) = (3 + 2) ? (4 + 5)i
-//{
-//	return;
-//}
+ComplexNumber operator*(int n, const ComplexNumber& right) // 3 * (2 + 3i) = (3 * 2) + (3 * 3)i
+{
+
+	int r;
+	int i;
+
+	r = right.get_Re() * n;
+	i = right.get_Im() * n;
+
+	ComplexNumber temp(r, i);
+	return temp;
+	
+}
+
+ComplexNumber operator*(const ComplexNumber& left, const ComplexNumber& right) // (3 + 4i) * (2 + 5i) = (3 * 2 - 4 * 5) + (3 * 5 + 4 * 2)i
+{
+	int r;
+	int i;
+
+	r = ((left.get_Re() * right.get_Re()) - (left.get_Im() * right.get_Im()));
+	i = ((left.get_Re() * right.get_Im()) + (left.get_Im() * right.get_Re()));
+
+	ComplexNumber temp(r, i);
+	return temp;
+}
+
+ComplexNumber operator+(const ComplexNumber& left, const ComplexNumber& right) // (3 + 4i) + (2 + 5i) = (3 + 2) + (4 + 5)i
+{
+	int r, i;
+
+	r = left.get_Re() + right.get_Re();
+	i = left.get_Im() + right.get_Im();
+
+	ComplexNumber temp(r, i);
+	return temp;
+}
+
+ComplexNumber operator-(const ComplexNumber& left, const ComplexNumber& right) // (3 + 4i) ? (2 + 5i) = (3 + 2) ? (4 + 5)i
+{
+	int r, i;
+
+	r = left.get_Re() + right.get_Re();
+	i = left.get_Im() + right.get_Im();
+
+	ComplexNumber temp(r, i);
+	return temp;
+}
 
 bool operator<(const ComplexNumber& left, const ComplexNumber& right)
 {
